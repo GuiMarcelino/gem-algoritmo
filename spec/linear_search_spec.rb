@@ -2,12 +2,12 @@
 require 'spec_helper'
 require_relative '../lib/linear_search'
 
-RSpec.describe "Linear Search" do
+RSpec.describe "LinearSearch" do
   it "Encontrando o elemento no array" do
     arr = [2, 3, 4, 10, 40]
     x = 10
     n = arr.length
-    busca = ::Linear_Search.new
+    busca = ::LinearSearch.new
     result = busca.search(arr, n, x)
     expect(result).to eq(3)
   end
@@ -16,7 +16,7 @@ RSpec.describe "Linear Search" do
     arr = [2, 3, 4, 10, 40]
     x = 15
     n = arr.length
-    busca = ::Linear_Search.new
+    busca = ::LinearSearch.new
     result = busca.search(arr, n, x)
     expect(result).to eq(-1)
   end
