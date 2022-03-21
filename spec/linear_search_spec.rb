@@ -1,16 +1,23 @@
 # frozen_string_literal: true
 require 'spec_helper'
-require '../../algoritmo/lib/linear_search'
+require_relative '../lib/linear_search'
 
-RSpec.describe "LinearSearch" do
-  it 'O elemento 20 está presente no índice 6' do
-    service = LinearSearch.new(
-      array: [10, 20, 80, 30, 60, 50, 110, 100, 130, 170],
-      position: 110
-    )
+RSpec.describe "Linear Search" do
+  it "Encontrando o elemento no array" do
+    arr = [2, 3, 4, 10, 40]
+    x = 10
+    n = arr.length
+    busca = ::Linear_Search.new
+    result = busca.search(arr, n, x)
+    expect(result).to eq(3)
+  end
 
-
-
-    expect(service.search).to eq(1)
+  it "Não encontrando o elemento no array" do
+    arr = [2, 3, 4, 10, 40]
+    x = 15
+    n = arr.length
+    busca = ::Linear_Search.new
+    result = busca.search(arr, n, x)
+    expect(result).to eq(-1)
   end
 end

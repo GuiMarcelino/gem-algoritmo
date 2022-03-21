@@ -1,18 +1,13 @@
 # frozen_string_literal: true
 
 require_relative "algoritmo/version"
+require_relative "linear_search.rb"
 
 class LinearSearch
-  def initialize(arr:, position:)
-    @array = arr
-    @position = position
-  end
-
-  def search(x)
-
-    @array.each do |element|
-      puts "O elemento #{@position} está presente no indice #{@array.find_index(@position)}" if x == element
+  def search(arr, n, x)
+    (0..arr.count).each do |i|
+      return i if arr[i] == x
     end
-    puts "O elemento #{@position} não está presente em arr[]."
+    -1
   end
 end
